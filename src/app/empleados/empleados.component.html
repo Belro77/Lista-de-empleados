@@ -1,0 +1,31 @@
+
+
+
+<div>  
+  
+    <!--Lista de empleados traida del componente padre -->
+    {{indice+1}}: {{empleadoDeLista.nombre}}    {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}}{{empleadoDeLista.salario}}
+
+
+  <a [routerLink]="['/actualiza',indice]" [queryParams]="{accion:'1'}"> 
+  Actualizar
+  </a>  
+&nbsp;
+<a [routerLink]="['/actualiza',indice]" [queryParams]="{accion:'2'}"> 
+  Eliminar
+   </a> 
+ </div>
+
+
+
+ <app-caracteristicas-de-empleados (CaracteristicasDeEmpleados)="agregarCaracteristica($event)" > </app-caracteristicas-de-empleados> 
+ <ul style="list-style: none;">
+  <li *ngFor="let Caracteristica of arrayCaracteristicas ">{{Caracteristica}}</li>
+</ul> 
+
+
+   
+
+  
+ 
+ 

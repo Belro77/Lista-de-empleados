@@ -1,0 +1,22 @@
+<div class="container ">
+    <div class="col"> <h1>{{titulo}}</h1></div>
+
+
+    <br><br>
+   
+    
+    <div class="col">
+
+      <!--<button type="submit" class="btn btn-primary" (click)="agregarEmpleado()" style="margin-top: 35px;">Agregar</button>-->
+    
+    
+     </div>
+    </div>
+    <br>
+
+  <br>
+  <br> 
+  <h3> {{titulo}}</h3>
+
+  <app-empleados  *ngFor="let empleado of empleados ;let i=index "[empleadoDeLista]="empleado" [indice]="i"></app-empleados>
+                        

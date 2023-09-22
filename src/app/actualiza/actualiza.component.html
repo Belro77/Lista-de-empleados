@@ -1,0 +1,30 @@
+<p>actualiza works!</p>
+<Form class="form-group row">
+    <div class="form-group col-md-3">
+    
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control  text-center" [(ngModel)]="cuadroNombre">
+  
+    </div>
+ 
+    <div class="form-group col-md-3 ">
+      
+        <label for="Apellido">Apellido:</label>
+        <input type="text" name="Apellido" id="Apellido" placeholder="Apellido" class="form-control text-center " [(ngModel)]="cuadroApellido">
+  
+    </div>
+    <div class="form-group col-md-3 ">
+      
+      <label for="Cargo">Cargo:</label>
+      <input type="text" name="Cargo" id="Cargo" placeholder="Cargo" class="form-control text-center" [(ngModel)]="cuadroCargo">
+
+  </div>
+  <div class="form-group col-md-3 ">
+      
+    <label for="Salario">Salario:</label>
+    <input type="text" name="Salario" id="Salario" placeholder="Salario" class="form-control text-center" [(ngModel)]="cuadroSalario">
+
+</div>
+
+  </Form>
+  <button class="btn btn-primary" (click)="actualizarEmpleado()">Acción </button>

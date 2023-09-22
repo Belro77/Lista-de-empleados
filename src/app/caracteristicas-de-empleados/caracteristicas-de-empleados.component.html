@@ -1,0 +1,8 @@
+<!-- tenemos un input type text donde el usuario va a intoducir cierta información la misma va a fluir desde el chil al fhater y esa información
+se identifica con el nombre en este caso #nuevaCaracteristica y tenemos un botón que sera el encargado de llamar a la función que creamos
+y le pasamos como parametro lo que el usuario a introducido en el cuadro de texto para que la función
+que hemos creado lo recoja y lo lance hacia el padre  -->
+
+ <label for="item-input">Add an item:</label>
+<input type="text" #nuevaCaracteristica>
+<button type="button" (click)="agregarCaracteristicas(nuevaCaracteristica.value)" class="btn btn-primary">Añadir Caracteristica</button>
