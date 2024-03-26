@@ -19,10 +19,10 @@ export class HomeComponent implements OnInit {
  empleados:Empleado[]=[];
  
   agregarEmpleado(){
- let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
+ //let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
  
  
- this.DatosServicios.agregarEmpleadoServicio(miEmpleado);
+// this.DatosServicios.agregarEmpleadoServicio(miEmpleado);
  }
     ngOnInit(): void {
      this.empleados=this.DatosServicios.empleados;

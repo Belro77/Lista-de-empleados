@@ -12,7 +12,7 @@ import { EmpleadosServices } from '../data.service';
 export class ProyectosComponent implements OnInit{
 
   constructor(private router:Router,private miServicio:EmpleadosService, private DatosServicios:EmpleadosServices){}
-  agregarEmpleado(){
+  agregarEmpleadoServicio(){
     let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
     
     

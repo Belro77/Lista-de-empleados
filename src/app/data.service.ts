@@ -1,33 +1,38 @@
 import { Injectable } from "@angular/core";
 import { Empleado } from "./empleado.model";
 import { EmpleadosService } from "./empleados.service";
+import { DatosServices } from "./Datos.services";
 //servicio dentro de otro servicio.
 
 @Injectable()
 export class EmpleadosServices{
-    constructor(private servicioVentanaEmergente:EmpleadosService){}
+    constructor(private servicioVentanaEmergente:EmpleadosService,private DatosService:DatosServices){}
+    empleados:Empleado[]=[]
 
-
-    empleados:Empleado[]=[
+   /*empleados:Empleado[]=[
 
         new Empleado("Juan","Diaz","Presidente" ,7500),
         new Empleado("Ana","martin","Directora" ,5500),
         new Empleado("María","Fernandez","Jefa sección" ,3500),
         new Empleado("Laura","López","Administrativo ",2500),
       
-       ];
+       ];*/
  
 agregarEmpleadoServicio(empleado:Empleado){
        this.empleados.push(empleado);
- this.servicioVentanaEmergente.muestraMensaje("Persona se va a agregar : " +  "⧵n" + empleado.nombre  +  "⧵n"+ "salario + empleado.salario");
-    }
+ 
+ 
+     //  this.servicioVentanaEmergente.muestraMensaje("Persona se va a agregar : " +  "⧵n" + empleado.nombre  +  "⧵n"+ "salario + empleado.salario");
+   
+//this.DatosService.guardarEmpleados(this.empleados);
+
+
+}
   
-    encontrarEmpleado  (indice:number)
+encontrarEmpleado  (indice:number)
     { let empleado:Empleado=this.empleados[indice];
 
-        return empleado; }
-
-
+        return empleado; } 
    actualizarEmpleado(indice:number,empleado:Empleado)
       {
 //lo que estamos haciendo es almacenar en empleadoModificado lo que viene despues del = 
