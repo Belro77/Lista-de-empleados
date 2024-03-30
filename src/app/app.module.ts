@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { CaracteristicasDeEmpleadosComponent } from './caracteristicas-de-empleados/caracteristicas-de-empleados.component';
-import { EmpleadosService } from './empleados.service';
-import {  EmpleadosServices} from './data.service';
+import {EmpleadosService } from './empleados.service';
+import { dataService} from './data.service';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
@@ -18,14 +18,15 @@ import { ActualizaComponent } from './actualiza/actualiza.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 import { DatosServices } from './Datos.services';
 import {HttpClientModule} from'@angular/common/http';
+import { EmpleosService } from './Empleo.service';
 
 const appRoutes:Routes= [
   {path:'Home',component:HomeComponent},
   {path:'Proyectos',component:ProyectosComponent},
   {path:'Contacto',component:ContactoComponent},
   {path:'QuienesSomos',component:QuienesSomosComponent},
-  {path:'actualiza/:indice',component:ActualizaComponent},
-  {path:'actualiza/:indice',component:ActualizaComponent},
+  {path:'home/:indice',component:HomeComponent},
+ {path:'home/:indice',component:HomeComponent},
  // {path:'**',component:ErrorPersonalizadoComponent},
 ];
 @NgModule({  
@@ -49,7 +50,7 @@ const appRoutes:Routes= [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
   ],
-  providers: [EmpleadosService,  EmpleadosServices,DatosServices],
+  providers: [EmpleadosService,EmpleosService,DatosServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

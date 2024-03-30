@@ -1,4 +1,5 @@
-export class Empleado {
+export class Empleado{
+  static nombre: string;
 
 constructor(  nombre:string, apellido:string,  cargo:string,  salario:number){
 
