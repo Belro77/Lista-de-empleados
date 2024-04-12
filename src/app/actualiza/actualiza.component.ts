@@ -4,19 +4,20 @@ import { Component ,OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Empleado } from '../empleado.model';
 import { EmpleadosService } from '../empleados.service';
-import { dataService } from '../data.service';
+
 import { EmpleosService } from '../Empleo.service';
+
 
 @Component({
   selector: 'app-actualiza',
   templateUrl: './actualiza.component.html',
   styleUrls: ['./actualiza.component.css']
 })
-
 export class ActualizaComponent implements OnInit{
 
-  constructor(private route:ActivatedRoute ,private router:Router,private dataService:dataService,
-   private EmpleadosService:EmpleadosService ,private EmpleosService:EmpleosService){}
+
+
+  constructor(private route:ActivatedRoute ,private router:Router, private EmpleadosService:EmpleadosService ,private EmpleosService:EmpleosService){}
  
     empleados:Empleado[]=[];
     
@@ -28,18 +29,18 @@ export class ActualizaComponent implements OnInit{
 
 
 //en this acción esta almacenando 1 o 2 depende la acción que solicitamos .
-        this.empleados=this.dataService.empleados;
+        this.empleados=this.EmpleosService.empleados;
 
        this.indice=this.route.snapshot.params['indice'];
 
-       let empleado:Empleado=this.dataService.encontrarEmpleado(this.indice);
+       let empleado:Empleado=this.EmpleosService.encontrarEmpleado(this.indice);
        
        this.cuadroNombre=empleado.nombre; 
        this.cuadroApellido=empleado.apellido; 
        this.cuadroSalario=empleado.salario;
        this.cuadroCargo=empleado.cargo;
      
-    
+ 
        }
     
    
@@ -58,22 +59,22 @@ export class ActualizaComponent implements OnInit{
     actualizarEmpleado(){
     if(this.accion==1){
       let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
-      this.dataService.actualizarEmpleado(this.indice,miEmpleado);
+      this.EmpleosService.actualizarEmpleado(this.indice,miEmpleado);
       this.router.navigate(['Home']);
+    
     }
     //Y si no sucede el valor 1 tome el valor 2 osea las 2 líneas de eliminar 
     else{
-      this.dataService.eliminarEmpleado(this.indice);
+
+      this.EmpleosService.eliminarEmpleado(this.indice);
       this.router.navigate(['Home']);
+    
       }
     }
-     /* eliminarEmpleado(){
-        //En vez de llamar al metodo anterior llamamos este metodo del servicio y solo 
-        //le paso como parametro el indice del empleado que quiero eliminar 
-        this.DatosServicios.eliminarEmpleado(this.indice);
-      this.router.navigate(['Home']);
-  //Y que nos redirija al index como siempre .
-      }*/
+ 
 
       accion:number;
-}
+  }
+
+  
+

@@ -6,18 +6,24 @@ import { Empleado } from '../empleado.model';
   templateUrl: './empleados.component.html',
   styleUrls: ['./empleados.component.css']
 })
-export class EmpleadosComponent {
 
-  @Input() empleadoDeLista:Empleado;
+  export class EmpleadosComponent {
 
-  @Input() indice:number;
+    @Input() empleadoDeLista:Empleado;
   
-// Creamos un array que recoja las caracteristicas que iremos agregando a cada empleado 
+    @Input() indice:number;
+    
+  // Creamos un array que recoja las caracteristicas que iremos agregando a cada empleado 
+  
+   arrayCaracteristicas= [''];
+  
+    agregarCaracteristica(nuevaCaracteristica: string){
+  
+      this.arrayCaracteristicas.push(nuevaCaracteristica);
 
- arrayCaracteristicas= [''];
+     
+    }
 
-  agregarCaracteristica(nuevaCaracteristica: string){
-
-    this.arrayCaracteristicas.push(nuevaCaracteristica);
-  }
+    
 }
+  

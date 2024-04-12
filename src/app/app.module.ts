@@ -4,6 +4,7 @@ import { FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { environment } from '../environments/environment';
 
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { CaracteristicasDeEmpleadosComponent } from './caracteristicas-de-empleados/caracteristicas-de-empleados.component';
@@ -19,14 +20,18 @@ import { ErrorPersonalizadoComponent } from './error-personalizado/error-persona
 import { DatosServices } from './Datos.services';
 import {HttpClientModule} from'@angular/common/http';
 import { EmpleosService } from './Empleo.service';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes:Routes= [
   {path:'Home',component:HomeComponent},
   {path:'Proyectos',component:ProyectosComponent},
   {path:'Contacto',component:ContactoComponent},
   {path:'QuienesSomos',component:QuienesSomosComponent},
-  {path:'home/:indice',component:HomeComponent},
- {path:'home/:indice',component:HomeComponent},
+  {path:'login',component:LoginComponent},
+  {path:'actualiza/:indice',component:ActualizaComponent},
+
+ 
+  
  // {path:'**',component:ErrorPersonalizadoComponent},
 ];
 @NgModule({  
@@ -41,6 +46,7 @@ const appRoutes:Routes= [
     ProyectosComponent,
     ActualizaComponent,
     ErrorPersonalizadoComponent,
+    LoginComponent,
  
   ],
   imports: [
@@ -50,6 +56,7 @@ const appRoutes:Routes= [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
   ],
+
   providers: [EmpleadosService,EmpleosService,DatosServices],
   bootstrap: [AppComponent]
 })
