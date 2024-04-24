@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
     let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
     
     this.EmpleosService.agregarEmpleadoServicio(miEmpleado);
+    
     }
        
  

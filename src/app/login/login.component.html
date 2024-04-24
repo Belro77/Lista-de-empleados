@@ -1,10 +1,11 @@
 <div>
-
-    <form >
-
+    <!--Creamos la instancia ,le decimos que cuando enviamos este formulario tiene que llamar al mètodo login y enviarle mi formulario -->
+    
+    <form  #miFormulario="ngForm" (ngSubmit)="login(miFormulario)">
+ <!--Para el correo y contraseña utilizamos el event binding para enviar la información que el usuario haya introducido-->
         <div class="form-group col-md-3">
 
-            <input type="email" name="Email" placeholder="Email">
+            <input type="email" name="Email" placeholder="Email" ngModel>
 
         </div>
         <br>
@@ -12,14 +13,17 @@
         
         <div class="form-group col-md-3">
 
-            <input type="password" name="password" placeholder="password" >
+            <input type="password" name="password" placeholder="password"ngModel >
 
         </div>
+        <br>
+        <br>
 
     
         
         <div class="col">
-            <button type="submit"class="btn btn-primary"  style="margin-top: 35px;">Login</button>
+            <button type="submit"class="btn btn-primary"   >Login</button>
+            
         </div>
 
     </form>

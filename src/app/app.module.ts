@@ -1,15 +1,13 @@
-import { NgModule } from '@angular/core';
+import {  InjectionToken,NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { environment } from '../environments/environment';
-
+//import { AngularFireModule } from '@angular/fire';
+//import { environment } from '../environments/environment';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { CaracteristicasDeEmpleadosComponent } from './caracteristicas-de-empleados/caracteristicas-de-empleados.component';
 import {EmpleadosService } from './empleados.service';
-import { dataService} from './data.service';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
@@ -21,6 +19,7 @@ import { DatosServices } from './Datos.services';
 import {HttpClientModule} from'@angular/common/http';
 import { EmpleosService } from './Empleo.service';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
 
 const appRoutes:Routes= [
   {path:'Home',component:HomeComponent},
@@ -55,9 +54,10 @@ const appRoutes:Routes= [
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+
   ],
 
-  providers: [EmpleadosService,EmpleosService,DatosServices],
+  providers: [EmpleadosService,EmpleosService,DatosServices,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
